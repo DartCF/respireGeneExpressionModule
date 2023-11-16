@@ -1,0 +1,57 @@
+global: &global
+  type: str
+  attr: ~
+bioproject:
+    root: DocumentSummary
+    vars:
+      - name: study_id
+        path: ~
+        attr: uid
+        type: int
+      - name: title
+        path: Project/ProjectDescr/Title
+        <<: *global
+      # - name: grant_title
+      #   path: Project/ProjectDescr/Grant/Title
+      #   <<: *global
+      - name: access
+        path: Submission/Description/Access
+        <<: *global
+      - name: description
+        path: Project/ProjectDescr/Description
+        <<: *global
+      - name: data_type
+        path: Project/ProjectType/ProjectTypeSubmission/ProjectDataTypeSet/DataType
+        <<: *global
+      - name: submitted
+        path: Submission
+        attr: submitted
+        <<: *global
+      # - name: center
+      #   path: Project/ProjectID/CenterID
+      #   attr: center
+      #   <<: *global
+      # - name: center_id
+      #   path: Project/ProjectID/CenterID
+      #   <<: *global
+      - name: organization
+        path: Submission/Description/Organization/Name
+        <<: *global
+      - name: organism_name
+        path: Project/ProjectType/ProjectTypeSubmission/Target/Organism/OrganismName
+        <<: *global
+      - name: organism_id
+        path: Project/ProjectType/ProjectTypeSubmission/Target/Organism
+        attr: species
+        <<: *global
+      - name: external_db
+        path: Project/ProjectDescr/ExternalLink/dbXREF
+        attr: db
+        <<: *global
+      - name: external_db_id
+        path: Project/ProjectDescr/ExternalLink/dbXREF/ID
+        <<: *global
+      - name: link_id
+        path: ProjectLinks/Link/Hierarchical/MemberID
+        attr: id
+        <<: *global
