@@ -8,8 +8,7 @@ This API uses the following technology stack:
 
 * FastAPI (Python) -- API interface and functionality
 * Postgres -- database
-* celery -- a backend worker service
-* redis -- a task queue and broker for celery
+
 
 ## About FastAPI
 
@@ -44,9 +43,6 @@ To inititiate a new instance of the gene expression data module, you will need t
 You will need to set up the following resources to use this module:
 
 * A database. Postgres is recommended, but not required. When the API connects to the database for the first time, it will create the needed database schema.
-
-* An AWS S3 bucket. This implementation of the gene expresssion module uses S3 as staging ground for large uploaded data files.
-
 
 # Ingesting Data
 
